@@ -6,4 +6,4 @@
  * Time: 5:01 PM
  */
 
-echo "Welcome to Project";
+echo "Welcome to Heroku Project";
