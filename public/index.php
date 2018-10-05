@@ -6,4 +6,16 @@
  * Time: 5:01 PM
  */
 
-echo "Welcome to Heroku Project";
+main::start("example.csv");
+
+class main{
+
+    public static function start($fileName){
+
+        $records = csv::getRecords($fileName); // get csv file records
+
+        $table = html::generateTable($records); // generate table
+
+        system::printTable($table);             // print html table
+    }
+}
