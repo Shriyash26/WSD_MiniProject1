@@ -66,8 +66,8 @@ class record {
         $this->{$name} = $value;
     }
 
-
-
-
-
+    public function returnArray(){
+        $array = (array) $this;
+        return $array;
     }
+ }
