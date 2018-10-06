@@ -14,9 +14,61 @@ class main{
 
         $records = csv::getRecords($fileName); // get csv file records
 
-//        $table = html::generateTable($records); // generate table
+        $table = html::generateTable($records); // generate table
 
-//        system::print($table);             // print html table
+        system::print($table);             // print html table
+    }
+}
+
+// display html table
+class html{
+    public static function generateTable($records){
+        $html = '<html>';
+
+        $html .= html_header::getHtmlHeader();
+
+        $html .= html_body::open_HtmlBody();
+
+        $html .= html_table::open_htmlTable();
+
+        $count = 0;
+
+        foreach ($records as $record){
+
+            $array = $record->returnArray();
+            $fields = array_keys($array);
+            $values = array_values($array);
+
+            while ($count == 0){
+                $html .= html_tableHead::open_TableHead();
+
+                $html .= create_table_Rows::open_tableRow();
+
+                foreach ($fields as $value){
+                    $html .= create_table_Header::createHeader($value);
+                }
+
+                $html .= create_table_Rows::close_tableRow();
+
+                $html .= html_tableHead::close_TableHead();
+
+                $count++;
+            }
+
+            $html .= create_table_Rows::open_tableRow();
+
+            foreach($values as  $value2){
+                $html .= tableData::printTabledata($value2);
+            }
+
+            $html .= create_table_Rows::close_tableRow();
+        }
+
+        $html .= html_table::close_htmlTable();
+        $html .= html_body::close_HtmlBody() ;
+        $html .= '</html>';
+
+        return $html;
     }
 }
 
@@ -45,8 +97,8 @@ class csv {
         }
 
         fclose($file);
-        var_dump($records);
-        return $record;
+//        var_dump($records);
+        return $records;
 
     }
 
@@ -151,8 +203,4 @@ class tableData{
     public static function printTabledata ($value){
         return '<td>'. $value . '</td>';
     }
-}
-// display html table
-class html{
-
 }
