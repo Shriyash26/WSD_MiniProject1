@@ -34,14 +34,12 @@ class csv {
             $record = fgetcsv($file);
             if($count == 0){
                 $fieldNames = $record; // get only field names
-                var_dump($fieldNames);
                 $count++;
 
             }
             else
             {
-
-                var_dump($record); // get only table data
+                $records[] = recordFactory::create($fieldNames, $record);// get fieldNames and table data
 
             }
         }
