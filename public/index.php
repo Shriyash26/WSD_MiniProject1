@@ -21,12 +21,28 @@ class main{
 }
 
 class csv {
+
     static public function getRecords($filename){
         $file = fopen($filename,  "r");
 
+        $fieldNames = array();
+
+        $count = 0;
+
         while(! feof($file)) {
+
             $record = fgetcsv($file);
-            print_r($record);
+            if($count == 0){
+                $fieldNames = $record; // get only field names
+                var_dump($fieldNames);
+                $count++;
+
+            }
+            else
+            {
+                var_dump($record); // get only table data
+
+            }
         }
 
         fclose($file);
