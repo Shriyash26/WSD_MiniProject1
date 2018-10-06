@@ -19,3 +19,19 @@ class main{
         system::printTable($table);             // print html table
     }
 }
+
+class csv {
+    static public function getRecords($filename){
+        $file = fopen($filename,  "r");
+
+        while(! feof($file)) {
+            $record = fgetcsv($file);
+            print_r($record);
+        }
+
+        fclose($file);
+        return $record;
+
+    }
+
+}
