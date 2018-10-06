@@ -121,5 +121,10 @@ class html_table{
 }
 // create table head
 class html_tableHead{
-
+    public static function open_TableHead(){
+        return '<thead>';
+    }
+    public static function close_TableHead(){
+        return '</thead >';
+    }
 }
