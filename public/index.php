@@ -44,9 +44,7 @@ class html{
 
                 $html .= create_table_Rows::open_tableRow();
 
-                foreach ($fields as $value){
-                    $html .= create_table_Header::createHeader($value);
-                }
+                $html .= system::forEachloop($fields,0);
 
                 $html .= create_table_Rows::close_tableRow();
 
@@ -57,9 +55,7 @@ class html{
 
             $html .= create_table_Rows::open_tableRow();
 
-            foreach($values as  $value2){
-                $html .= tableData::printTabledata($value2);
-            }
+            $html .= system::forEachloop($values,1);
 
             $html .= create_table_Rows::close_tableRow();
         }
