@@ -206,5 +206,10 @@ class tableData{
 }
 // main html tag
 class html_main_Tag{
-
+    public static function open_HtmlTag(){
+        return '<html>';
+    }
+    public static function close_HtmlTag(){
+        return '</html>';
+    }
 }
