@@ -71,3 +71,7 @@ class record {
         return $array;
     }
  }
+
+class recordFactory {
+
+}
