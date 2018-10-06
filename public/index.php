@@ -40,6 +40,7 @@ class csv {
             }
             else
             {
+
                 var_dump($record); // get only table data
 
             }
@@ -49,5 +50,11 @@ class csv {
         return $record;
 
     }
+
+}
+
+class record {
+
+
 
 }
