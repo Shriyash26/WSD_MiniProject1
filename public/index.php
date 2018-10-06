@@ -112,7 +112,7 @@ class html_body{
 // create html table
 class html_table{
     public static function open_htmlTable(){
-        return '<table>';
+        return '<table  class="table table-bordered table-striped">';
     }
     public static function close_htmlTable(){
         return '</table>';
