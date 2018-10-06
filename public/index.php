@@ -101,5 +101,10 @@ class html_header{
 
 // create html body
 class html_body{
-
+    public static function open_HtmlBody(){
+        return '<body>';
+    }
+    public static function close_HtmlBody(){
+        return '</body>';
+    }
 }
