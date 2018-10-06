@@ -147,6 +147,22 @@ class system{
         echo $value;
     }
 
+    public static function forEachloop($value,$flag){
+        $data = '';
+        foreach ($value as $asValue){
+            switch ($flag) {
+                case 0:
+                    $data .= create_table_Header::createHeader($asValue);
+                    break;
+                case 1:
+                    $data .= tableData::printTabledata($asValue);
+                    break;
+            }
+        }
+        return $data;
+
+    }
+
 }
 // get html header
 class html_header{
