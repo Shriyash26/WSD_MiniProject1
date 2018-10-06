@@ -23,7 +23,7 @@ class main{
 // display html table
 class html{
     public static function generateTable($records){
-        $html = '<html>';
+        $html = html_main_Tag::open_HtmlTag();
 
         $html .= html_header::getHtmlHeader();
 
@@ -66,7 +66,7 @@ class html{
 
         $html .= html_table::close_htmlTable();
         $html .= html_body::close_HtmlBody() ;
-        $html .= '</html>';
+        $html .= html_main_Tag::close_HtmlTag();
 
         return $html;
     }
