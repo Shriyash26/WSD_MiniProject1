@@ -204,3 +204,7 @@ class tableData{
         return '<td>'. $value . '</td>';
     }
 }
+// main html tag
+class html_main_Tag{
+
+}
