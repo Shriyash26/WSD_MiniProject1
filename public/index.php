@@ -73,5 +73,11 @@ class record {
  }
 
 class recordFactory {
+    public static  function  create( array $fieldNames = null, array  $values = null) {
+        $record = new record($fieldNames, $values);
+
+        return $record;
+
+    }
 
 }
