@@ -148,5 +148,7 @@ class create_table_Rows{
 }
 // get table data
 class tableData{
-
+    public static function printTabledata ($value){
+        return '<td>'. $value . '</td>';
+    }
 }
