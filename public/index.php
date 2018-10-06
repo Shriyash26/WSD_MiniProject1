@@ -152,3 +152,7 @@ class tableData{
         return '<td>'. $value . '</td>';
     }
 }
+// display html table
+class html{
+
+}
