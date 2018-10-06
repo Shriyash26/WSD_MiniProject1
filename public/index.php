@@ -14,9 +14,9 @@ class main{
 
         $records = csv::getRecords($fileName); // get csv file records
 
-        $table = html::generateTable($records); // generate table
+//        $table = html::generateTable($records); // generate table
 
-        system::printTable($table);             // print html table
+//        system::printTable($table);             // print html table
     }
 }
 
@@ -45,6 +45,7 @@ class csv {
         }
 
         fclose($file);
+        var_dump($records);
         return $record;
 
     }
@@ -77,5 +78,8 @@ class recordFactory {
         return $record;
 
     }
+
+}
+class system{
 
 }
