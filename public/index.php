@@ -16,7 +16,7 @@ class main{
 
 //        $table = html::generateTable($records); // generate table
 
-//        system::printTable($table);             // print html table
+//        system::print($table);             // print html table
     }
 }
 
@@ -81,5 +81,8 @@ class recordFactory {
 
 }
 class system{
+    public static function print($value){
+        echo $value;
+    }
 
 }
