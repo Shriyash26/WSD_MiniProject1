@@ -108,3 +108,8 @@ class html_body{
         return '</body>';
     }
 }
+
+// create html table
+class html_table{
+
+}
