@@ -84,16 +84,21 @@ class csv {
         while(! feof($file)) {
 
             $record = fgetcsv($file);
-            if($count == 0){
-                $fieldNames = $record; // get only field names
-                $count++;
+            if ($record == null){
+                continue; // ignores blank rows in csv
+            }else{
+                if($count == 0){
+                    $fieldNames = $record; // get only field names
+                    $count++;
 
-            }
-            else
-            {
-                $records[] = recordFactory::create($fieldNames, $record);// get fieldNames and table data
+                }
+                else
+                {
+                    $records[] = recordFactory::create($fieldNames, $record);// get fieldNames and table data
 
+                }
             }
+
         }
 
         fclose($file);
@@ -106,11 +111,16 @@ class csv {
 
 class record {
     public function __construct( array $fieldNames = null, array $values = null){
-        $record = array_combine($fieldNames,$values);
-        foreach ($record as $property => $value){
 
-            $this->createProperty($property,$value);
+        if (count($fieldNames) == count($values)){
+            $record = array_combine($fieldNames,$values);
+            foreach ($record as $property => $value){
+                $this->createProperty($property,$value);
+            }
+        }else{
+            //ignore blank rows in csv
         }
+
     }
 
     public function createProperty($name, $value){
