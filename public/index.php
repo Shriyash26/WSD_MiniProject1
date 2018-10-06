@@ -86,6 +86,7 @@ class system{
     }
 
 }
+// get html header
 class html_header{
     public static function getHtmlHeader(){
         $html_header = '<head>';
@@ -96,4 +97,9 @@ class html_header{
         $html_header .= '</head>';
         return $html_header;
     }
+}
+
+// create html body
+class html_body{
+
 }
