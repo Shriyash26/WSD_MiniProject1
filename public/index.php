@@ -130,5 +130,10 @@ class html_tableHead{
 }
 // create table header
 class create_table_Header{
+    public static function createHeader ($value){
+
+        return '<th>'. $value . '</th>';
+
+    }
 
 }
