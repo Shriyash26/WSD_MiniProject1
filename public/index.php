@@ -119,3 +119,7 @@ class html_table{
     }
 
 }
+// create table head
+class html_tableHead{
+
+}
