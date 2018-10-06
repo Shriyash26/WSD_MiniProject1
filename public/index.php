@@ -57,12 +57,17 @@ class record {
     public function __construct( array $fieldNames = null, array $values = null){
         $record = array_combine($fieldNames,$values);
         foreach ($record as $property => $value){
-            
+
             $this->createProperty($property,$value);
         }
+    }
+
+    public function createProperty($name, $value){
+        $this->{$name} = $value;
     }
 
 
 
 
-}
+
+    }
